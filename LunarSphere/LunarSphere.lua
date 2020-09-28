@@ -76,7 +76,7 @@
 --
 -- Fix Author		: Fullmoon-Sulfuras
 --
--- v1.13.3.1 Fixed	: December 26, 2019 - initial WoW Classic compatibility release
+-- v1.41 Fixed		: December 26, 2019 - initial WoW Classic compatibility release
 --
 -- /***********************************************
 
@@ -93,7 +93,7 @@
 
 LUNARSPHERE_CHAT = "|cFF82B8E1Lunar|cFFA1CAE8Sph|cFFC7DFF1ere: |r";
 LUNAR_ICON_PREFIX = "Interface\\Icons\\"
-LUNAR_CURRENT_VERSION = 1.1331;
+LUNAR_CURRENT_VERSION = 1.41;
 
 -- Define built-in texture counts
 Lunar.includedButtons = 38;
@@ -268,7 +268,7 @@ function LunarSphere_OnEvent(self, event)
 			Lunar.API:HidePetBar(LunarSphereSettings.hidePetBar, true);
 			Lunar.API:HideCalendar(LunarSphereSettings.hideCalendar, true);
 			Lunar.API:HideWorldmap(LunarSphereSettings.hideWorldmap, true);
---			Lunar.API:HideTracking(LunarSphereSettings.hideTracking, true);
+			Lunar.API:HideTracking(LunarSphereSettings.hideTracking, true);
 		end
 
 		-- The following block of code was taken from worldofwar.net in the forums.
@@ -1498,8 +1498,10 @@ function LunarSphere_BackwardsCompatibility()
 		Lunar.showStartupMessage = Lunar.showStartupMessage or LunarSphereSettings.showStartupMessage;
 		Lunar.startupMessage = Lunar.startupMessage or LunarSphereSettings.startupMessage;
 		LunarSphereSettings.showStartupMessage = true;
-		LunarSphereSettings.startupMessage =
-				"Welcome to Legion";
+		LunarSphereSettings.startupMessage = "Welcome to Battle For Azeroth";
+		if( Lunar.API:IsVersionRetail() == false ) then
+			LunarSphereSettings.startupMessage = "Welcome to Classic";
+		end
 	end
 end
 
