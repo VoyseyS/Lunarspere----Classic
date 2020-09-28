@@ -35,7 +35,7 @@ local LSMACRO;
 local LS = "LunarSphere"		-- Not to be localized =)
 local LSE = "LunarSphereExporter"	-- Not to be localized =)
 
-local localeVersion = 1.1331;
+local localeVersion = 1.41;
 
 if (locale == "enUS") or (force_enUS == true) then
 	
@@ -1172,7 +1172,7 @@ elseif (locale == "deDE") then
 
 	-- Aucttion Classes contents
 	LSAUCCLASSES1 = "Waffe";
-	LSAUCCLASSES2 = "R?stung";
+	LSAUCCLASSES2 = "Rüstung";
 	LSAUCCLASSES3 = "Verbrauchs";
 
 	Lunar.Locale = {
